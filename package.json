@@ -1,0 +1,18 @@
+{
+  "name": "editenv",
+  "version": "0.0.1",
+  "description": "EditEnv is a simple and efficient Node.js library for loading, parsing, editing, and saving .env files. Ideal for programmatically managing environment variables in your projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
