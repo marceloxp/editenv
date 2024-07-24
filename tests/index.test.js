@@ -3,7 +3,7 @@ const EditEnv = require('../src/index');
 
 // Cria um arquivo .env de teste
 const testEnvPath = './tests/.env.test';
-fs.writeFileSync(testEnvPath, 'EXISTING_KEY=existing_value\nANOTHER_KEY=another_value\n');
+fs.writeFileSync(testEnvPath, '#MAIN TEST\n\nEXISTING_KEY=existing_value\nANOTHER_KEY=another_value\n');
 
 describe('EditEnv', () => {
     let envEditor;
@@ -13,7 +13,7 @@ describe('EditEnv', () => {
     });
 
     afterEach(() => {
-        fs.writeFileSync(testEnvPath, 'EXISTING_KEY=existing_value\nANOTHER_KEY=another_value\n');
+        fs.writeFileSync(testEnvPath, '#MAIN TEST\n\nEXISTING_KEY=existing_value\nANOTHER_KEY=another_value\n');
     });
 
     test('should load .env file', () => {
