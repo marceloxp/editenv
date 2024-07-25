@@ -14,9 +14,11 @@ npm install editenv
 ## Usage
 
 ```js
-const EditEnv = require('editenv');
+const { EditEnvLoad, EditEnvAsJson, EditEnvGet, EditEnvSet } = require('editenv');
 
-const envEditor = new EditEnv('./.env');
-envEditor.edit('NEW_KEY', 'new_value');
-envEditor.save();
+EditEnvLoad('./.env');
+EditEnvAsJson('./.env');
+EditEnvGet('./.env', 'EXISTING_KEY')
+EditEnvSet('./.env', 'EXISTING_KEY', 'new_value');
+EditEnvSet('./.env', 'NEW_KEY', 'new_value');
 ```

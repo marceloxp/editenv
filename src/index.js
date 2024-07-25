@@ -6,6 +6,10 @@ class EditEnv {
         this.originalContent = fs.readFileSync(this.filePath, 'utf-8');
     }
 
+    get() {
+        return this.originalContent;
+    }
+
     load() {
         return this.parse();
     }
@@ -38,4 +42,30 @@ class EditEnv {
     }
 }
 
-module.exports = EditEnv;
+function EditEnvGet(filePath, key) {
+    const envEditor = new EditEnv(filePath);
+    return envEditor.load()[key];
+}
+
+function EditEnvLoad(filePath) {
+    const envEditor = new EditEnv(filePath);
+    return envEditor.get();
+}
+
+function EditEnvAsJson(filePath) {
+    const envEditor = new EditEnv(filePath);
+    return envEditor.parse();
+}
+
+function EditEnvSet(filePath, key, value) {
+    const envEditor = new EditEnv(filePath);
+    envEditor.edit(key, value);
+    envEditor.save();
+}
+
+module.exports = {
+    EditEnvLoad,
+    EditEnvAsJson,
+    EditEnvGet,
+    EditEnvSet,
+}
