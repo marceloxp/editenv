@@ -61,6 +61,7 @@ function EditEnvSet(filePath, key, value) {
     const envEditor = new EditEnv(filePath);
     envEditor.edit(key, value);
     envEditor.save();
+    process.env[key] = value;
 }
 
 module.exports = {
