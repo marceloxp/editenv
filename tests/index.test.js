@@ -1,5 +1,5 @@
-const fs = require('fs');
-const { EditEnvLoad, EditEnvAsJson, EditEnvSet } = require('../src/index');
+import fs from 'fs';
+import { EditEnvLoad, EditEnvAsJson, EditEnvSet } from '../src/index.js';  // ajuste o caminho e a extensão conforme necessário
 
 // Cria um arquivo .env de teste
 const testEnvPath = './tests/.env.test';

@@ -1,4 +1,4 @@
-const fs = require('fs');
+import fs from 'fs';
 
 class EditEnv {
     constructor(filePath) {
@@ -64,9 +64,9 @@ function EditEnvSet(filePath, key, value) {
     process.env[key] = value;
 }
 
-module.exports = {
+export {
     EditEnvLoad,
     EditEnvAsJson,
     EditEnvGet,
     EditEnvSet,
-}
+};
